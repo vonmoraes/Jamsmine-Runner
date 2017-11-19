@@ -1,5 +1,5 @@
 ; Lucas de Souza Moraes - 538464
-; Luana Duarte Santana Farias -
+; Luana Duarte Santana Farias - 576485
 LIST   P=PIC16F628A
 #INCLUDE <P16F628A.INC> 		;P16F628A
 	__CONFIG _INTRC_OSC_NOCLKOUT & _WDT_OFF & _PWRTE_ON & _BODEN_OFF & _LVP_OFF & _CP_OFF & _MCLRE_OFF & _DATA_CP_OFF
