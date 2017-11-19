@@ -33,7 +33,7 @@ LOOP:
 MAIN
       MOVLW	D'7'
       MOVWF	AUX
-      FOR1: MOVLW	B'10000100'		;S1 VERDE,S2 VERMELHO
+      FOR1: MOVLW	B'00001100'		;S1 VERDE,S2 VERMELHO
             MOVWF	PORTB
             CALL DELAY
 						BTFSC BUTTON
@@ -42,7 +42,7 @@ MAIN
             GOTO FOR1
       MOVLW	D'3'
       MOVWF	AUX
-      FOR2: MOVLW	B'10000010'		;S1 AMARELO,S2 VERMELHO
+      FOR2: MOVLW	B'00001010'		;S1 AMARELO,S2 VERMELHO
             MOVWF	PORTB
             CALL DELAY
 						BTFSC BUTTON
@@ -60,7 +60,7 @@ MAIN
             GOTO FOR3
       MOVLW	D'2'
       MOVWF	AUX
-      FOR4: MOVLW	B'01000001'		;S1 VERMELHO, S2 AMARELO
+      FOR4: MOVLW	B'00010001'		;S1 VERMELHO, S2 AMARELO
             MOVWF	PORTB
             CALL DELAY
 						BTFSC BUTTON
@@ -74,7 +74,7 @@ MAIN
 ;*******************************************************************
 CICLO_1: MOVLW	D'3'
          MOVWF	AUX
-         FOR2: MOVLW	B'10000010'		;S1 AMARELO,S2 VERMELHO
+         FOR2: MOVLW	B'00001010'		;S1 AMARELO,S2 VERMELHO
                MOVWF	PORTB
                CALL DELAY
                DECFSZ AUX,F
@@ -89,14 +89,14 @@ CICLO_1: MOVLW	D'3'
          CALL DELAY
          MOVLW	D'3'
          MOVWF	AUX
-         FOR4: MOVLW	B'01000001'		;S1 VERMELHO, S2 AMARELO
+         FOR4: MOVLW	B'00010001'		;S1 VERMELHO, S2 AMARELO
                MOVWF	PORTB
                CALL DELAY
                DECFSZ AUX,F
                GOTO FOR4
          MOVLW	D'4'
          MOVWF	AUX
-         FOR1: MOVLW	B'10000100'		;S1 VERDE,S2 VERMELHO
+         FOR1: MOVLW	B'00001100'		;S1 VERDE,S2 VERMELHO
                MOVWF	PORTB
                CALL DELAY
                DECFSZ AUX,F
@@ -112,14 +112,14 @@ CICLO_2: MOVLW	D'3'
          MOVLW	D'3'
          MOVWF	AUX
          NOP
-         FOR4: MOVLW	B'01000001'		;S1 VERMELHO, S2 AMARELO
+         FOR4: MOVLW	B'00010001'		;S1 VERMELHO, S2 AMARELO
                MOVWF	PORTB
                CALL DELAY
                DECFSZ AUX,F
                GOTO FOR4
         MOVLW	D'4'
         MOVWF	AUX
-        FOR1: MOVLW	B'10000100'		;S1 VERDE,S2 VERMELHO
+        FOR1: MOVLW	B'00001100'		;S1 VERDE,S2 VERMELHO
               MOVWF	PORTB
               CALL DELAY
               DECFSZ AUX,F
@@ -135,14 +135,14 @@ CICLO_3: MOVLW	D'3'
          CALL DELAY
          MOVLW	D'3'
          MOVWF	AUX
-         FOR4: MOVLW	B'01000001'		;S1 VERMELHO, S2 AMARELO
+         FOR4: MOVLW	B'00010001'		;S1 VERMELHO, S2 AMARELO
                MOVWF	PORTB
                CALL DELAY
                DECFSZ AUX,F
                GOTO FOR4
          MOVLW	D'4'
          MOVWF	AUX
-         FOR1: MOVLW	B'10000100'		;S1 VERDE,S2 VERMELHO
+         FOR1: MOVLW	B'00001100'		;S1 VERDE,S2 VERMELHO
                MOVWF	PORTB
                CALL DELAY
                DECFSZ AUX,F
