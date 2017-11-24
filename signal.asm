@@ -23,7 +23,6 @@
     ENDC                        ;FIM DO BLOCO DE MEMORIA
     ORG    0x00                    ;ENDERECO INICIAL DE PROCESSAMENTO
     GOTO    INICIO
-
 ;***********************************************************************************************
 INICIO:
         CLRF PORTA                 ;LIMPA A PORTA
@@ -40,10 +39,9 @@ INICIO:
         BANK0
             MOVLW B'00000111'
             MOVWF CMCON        ;COMPARADOR ANALOGICO
-
 ;***********************************************************************************************
 ;TESTE DOS LEDS E DO BOTAO
-GOTO TESTE
+;GOTO TESTE
 ;COMENTAR TESTE CASO NAO ESTEJA EM TESTE
 ;***********************************************************************************************
 LOOP
@@ -98,23 +96,23 @@ FOR4
 ;***********************************************************************************************
 ;SUBROTINAS
 ;***********************************************************************************************
-	;CLRF FLAG
 TESTE
     CLRF FLAG       ;LIMPAR FLAG, FLAG = 0
     CALL DELAY      ;CHAMA DELAY DE 1 SEGUNDO
     BTFSC FLAG,0    ;COMPARA SE FLAG !=0
     CALL ALLHIGH    ;SE FOR != ACENDE TODOS OS LEDS
-    GOTO TESTE
+	CALL ALLLOW		;SE FOR = 0 APAGA OS LEDS
 ALLHIGH
     MOVLW B'11111111' ;ACENDE TODOS OS LEDS (RB - 0,1,2,3,4,5,X,X)
     MOVWF PORTB
-    CALL DELAY
+	CALL DELAY
+	CALL DELAY
+	CALL DELAY
     RETURN
 ALLLOW
     MOVLW B'00000000' ;APAGATODOS OS LEDS (RB - 0,1,2,3,4,5,X,X)
     MOVWF PORTB
-    CALL DELAY
-    RETURN
+    GOTO TESTE
 ;***********************************************************************************************
 ;FIM ROTINA DE TESTE E INICIO DAS ROTINAS DOS CICLOS
 ;***********************************************************************************************
